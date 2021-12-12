@@ -3,8 +3,11 @@ from bs4 import BeautifulSoup
 import random
 import pickle
 import dataset
+import os
 
-db = dataset.connect()  # reads env url DATABASE_URL
+DATABASE_URL = "postgresql://" + os.getenv('DATABASE_URL').removeprefix('postgres://')
+
+db = dataset.connect(DATABASE_URL)
 table = db['bridgemaster']
 
 cache = {}
