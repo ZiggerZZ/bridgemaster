@@ -1,0 +1,1 @@
+script: python bridgemaster.py
